@@ -14,4 +14,4 @@ The aforementioned web application is uploaded to a cloud environment in a test 
 application it was mainly used PHP programming language, Java programming language and technologies such as HTML, MySQL, 
 jQuery, CSS. 
 
-To create this work FLOSS programs and technologies such as <a href="https://pdepend.org/">PHP Depend</a> had been used.
+To create this work FLOSS programs and technologies such as <a href="https://pdepend.org/" target="_blank">PHP Depend</a> had been used.
