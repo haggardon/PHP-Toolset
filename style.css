@@ -1,0 +1,166 @@
+@import "//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css";
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,700);
+@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
+@import url("font-mfizz.css");
+
+
+html,
+body {
+/*css for full size background image*/
+  background: url(/images/background_low_res.jpg) no-repeat center center fixed rgba(0,0,0,0.3); 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  
+  height: 100%;
+  background-color: #060;
+  color: #fff;
+  text-align: center; 
+}
+
+/*******************************     Header     *******************************/
+
+.logo{
+	font-family: 'Indie Flower', cursive;
+	font-size: 50px;
+	text-align: left;
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.head_title{
+	text-align: right;
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+	font-family: 'Roboto Slab',cursive;
+}
+
+header a{
+	color: #fff;
+}
+
+header a:hover{
+	color: #63b76c;
+	text-decoration: none;
+}
+
+
+/*******************************     Main Content     *******************************/
+
+#main-content{
+	margin-top: 5%;
+}
+
+.shadow{
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.template-download{
+	display: none;
+}
+
+.center{
+	text-align: center !important;
+}
+.black{
+	font-family: 'Roboto Slab', serif !important;
+	color: #000000;
+	text-align: left;
+	margin-left: 10px;
+}
+
+h3.title { font-family: 'Roboto Slab', serif !important; font-size: 16px; color: #222; font-weight: 500; }
+
+.alignright{
+	float: right;
+	margin-right: 50px;
+}
+
+
+/*******************************     Upload       *******************************/
+.name, .size{
+	color: #000000;
+}
+
+.success{
+	color: #000000;
+}
+
+#loadingDiv{
+	color: #000000;
+	
+	}
+	
+
+
+/*******************************     Features     *******************************/
+
+.box > .icon { text-align: center; position: relative; }
+.box > .icon > .image { position: relative; z-index: 2; margin: auto; width: 88px; height: 88px; border: 8px solid white; line-height: 77px; border-radius: 50%; background: #63B76C; vertical-align: middle; }
+.box > .icon:hover > .image { background: #333; }
+.box > .icon > .image > i { font-size: 45px !important; color: #fff !important; }
+.box > .icon:hover > .image > i { color: white !important; }
+.box > .icon > .info { margin-top: -24px; background: #fff; border: 1px solid #e0e0e0; padding: 15px 0 10px 0; }
+.box > .icon > .info{
+	/* min-height: 300px; */
+}
+.box > .icon:hover > .info { background: #fff; border-color: #e0e0e0; color: white; }
+.box > .icon > .info > p { font-family: 'Roboto Slab', serif !important; font-size: 14px; color: #707070; line-height: 1.5em; margin: 20px;}
+.box > .icon:hover > .info > h3.title, .box > .icon:hover > .info > p, .box > .icon:hover > .info > .more > a { color: #222; }
+.box > .icon > .info > .more a { font-family: 'Roboto Slab', serif !important; font-size: 12px; color: #222; line-height: 12px; text-transform: uppercase; text-decoration: none; }
+.box > .icon:hover > .info > .more > a { color: #fff; padding: 6px 8px; background-color: #63B76C; }
+.box .space { height: 30px; }
+
+.image i {
+    font-size: 45px;
+}
+
+.sucup{
+	color: #000000;
+}
+/*******************************     Footer     *******************************/
+
+footer{
+	text-align:right;
+	margin-top: 5em;
+}
+
+
+
+/*******************************     Scroll to TOP     *******************************/
+
+.scroll-top-wrapper {
+    position: fixed;
+	opacity: 0;
+	visibility: hidden;
+	overflow: hidden;
+	text-align: center;
+	z-index: 99999999;
+    background-color: #777777;
+	color: #eeeeee;
+	width: 50px;
+	height: 48px;
+	line-height: 48px;
+	right: 30px;
+	bottom: 30px;
+	padding-top: 2px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+.scroll-top-wrapper:hover {
+	background-color: #888888;
+}
+.scroll-top-wrapper.show {
+    visibility:visible;
+    cursor:pointer;
+	opacity: 1.0;
+}
+.scroll-top-wrapper i.fa {
+	line-height: inherit;
+}
