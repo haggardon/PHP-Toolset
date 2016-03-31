@@ -1,0 +1,76 @@
+{
+   "dependencies":{
+      "classes":
+         {
+            "name":"test",
+            "sources":"/var/www",
+            "type":"post",
+            "innerclass":12,
+            "classSize":3,
+            "usedby":4,
+            "usesinternal":6,
+            "usesexternal":7,
+            "layer":2,
+            "classesesForDependee":[
+
+            ],
+            "paths":[
+
+            ],
+            "classesesForDependency":[
+
+            ],
+            "marked":true,
+            "frequency":12
+         }
+       ,
+      "packages":[
+         {
+            "name":"javax.el",
+            "sources":"/var/www",
+            "packageSize":12,
+            "usedBy":1,
+            "usesInternal":3,
+            "usesExternal":5,
+            "layer":6,
+            "packagesForDependency":[
+
+            ],
+            "packagesForDependee":[
+
+            ],
+            "classes":[
+               {
+                  "name":"2",
+                  "classesesForDependee":[
+
+                  ],
+                  "paths":[
+
+                  ],
+                  "classesesForDependency":[
+
+                  ],
+                  "marked":false,
+                  "frequency":12
+               }
+            ]
+         }
+      ]
+   },
+   "metrics":{
+      "classes":[
+         {
+            "className":"2",
+            "WMC":0.2,
+            "DIT":3.6,
+            "NOC":5.69787,
+            "CBO":4,
+            "RFC":9.654,
+            "LCOM":1.1234,
+            "Ca":3.2134,
+            "NPM":2.123456
+         }
+      ]
+   }
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html><head>
+	<title>PHP Toolbox - M.Sc. Thesis</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/style.css">
+    <script src="js/jquery/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery/jquery-ui.min.js"></script>
+	<script src="js/jquery/vendor/jquery.ui.widget.js"></script>
+	<script src="js/jquery/jquery.iframe-transport.js"></script>
+	<script src="js/jquery/jquery.fileupload.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+</head>
+
+<style>
+.box > .icon > .info{
+	height: 200px;
+}
+
+
+
+#progress{
+	display: block;
+	width: 100%;
+	height:20px;
+	padding: 2px 5px;
+	margin: 2px 0;
+	border: 0px inset #446;
+	border-radius: 5px;
+	
+}
+
+#show-success{
+	height:20px;
+	width:0px;
+	background-color:#390;
+	padding: 0px 5px;
+	margin: 2px 0;
+	border: 1px inset #446;
+	border-radius: 5px;
+	visibility:hidden;
+	}
+		
+
+</style>
+<body>
+<div class="container">
+	<header>
+		<div class="row">
+			<div class="col-xs-6 col-sm-6 col-lg-6">
+				<h1 class="logo"><a href="http://54.172.122.35">PHP Toolbox</a></h1>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-lg-6">
+				<h2 class="head_title">M.Sc. Thesis</h2>
+			</div>
+		</div>
+	</header>
+	<section id="main-content">
+	<section id="features">
+		<div class="row">
+        <!-- Boxes de Acoes -->		
+        <div class="col-xs-12 col-sm-6 col-lg-6">
+			<div class="box">							
+				<div class="icon">
+					<div class="image"><i class="icon-java"></i></div>
+					<div class="info">
+						<h3 class="title">Java Analyzer</h3>
+    					<p>
+							Upload your Java software in .jar format.
+						</p>
+						
+					</div>
+				</div>
+				<div class="space"></div>
+			</div> 
+		</div>
+			
+        <div class="col-xs-12 col-sm-6 col-lg-6">
+			<div class="box">							
+				<div class="icon">
+					<div class="image"><i class="glyphicon glyphicon-cloud-upload"></i></div>
+					<div class="info InSuccess">
+						<h3 class="title">Upload</h3>
+    					<input id="fileupload" type="file" name="file" data-url="/JavaAnalyze/upload" multiple>
+					<p></p>
+                    
+        <div id="progress">
+        <div> 
+
+        <p id="show-success"></p>
+    </div>
+    
+		</div>
+                    
+                    
+                    
+				</div>
+                
+
+    
+			</div> 
+		</div>		    
+		<!-- /Boxes de Acoes -->
+	</div>
+	</section>
+	<footer>
+		<div class="row-fluid">
+			<i class="fa fa-copyright"></i> 2015 Konstantinos Akritidis
+		</div>
+	</footer>
+</div>
+
+<script>
+$(function () {
+    $('#fileupload').fileupload({
+		
+		
+      //  dataType: 'json',
+        done: function (e, data) {
+			$.each(data.result,function(){
+				$result = /[^/]*$/.exec(data.result.dependencies.classes[0].sources)[0];
+				
+				})
+        console.log(data.result);
+		var dataToSend = data.result;
+		var resultis = $result;
+		//var dataToSend = data.result;
+		
+		$.ajax({
+type: 'POST',
+url: "onoma.php",
+data: {"dependencies":dataToSend, "jsname":$result},
+success: function(msg){
+$(".success").empty();
+$("#show-success").css("visibility","hidden");
+				PlacingDiv=document.createElement("div")
+				 $(PlacingDiv).addClass("success")
+				 .appendTo(".InSuccess")						 
+				 .append(msg)
+					},
+				
+
+});
+		
+	
+        }
+    });
+});
+
+
+
+$('#fileupload').bind('fileuploadprogress', function (e, data) {
+    // Log the current bitrate for this upload:
+    var pc= parseInt(data.loaded / data.total * 100, 10);
+	$("#show-success").html(pc+"%");
+	$("#show-success").css("visibility","visible");
+	$("#show-success").css("width",pc+"%");
+});
+
+
+</script>
+
+</body>
+</html>
